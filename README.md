@@ -1,4 +1,4 @@
-# FlashbangGun
+# now with extra balls
 com45 but fires flash grenades instead of bullets.
 
 
