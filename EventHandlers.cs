@@ -22,12 +22,15 @@ namespace FlashbangGun
         }
     public class EventHandlers
     {
+                public int d = 1;
         private readonly FlashbangGun _plugin;
 
         public EventHandlers(FlashbangGun plugin) => _plugin = plugin;
 
         public void OnShooting(ShootingEventArgs ev)
         {
+                    
+                                d++;
             // you can change weapon type from there
             if (ev.Player.CurrentItem?.Type == ItemType.GunCom45)
             {
@@ -35,15 +38,16 @@ namespace FlashbangGun
 
                 // you can change to frag grenade if you want
                 
-                for(int d =1; i < 10; d++) {
+                 
                     throwable throwable = (throwable)Item.Create(ItemType.SCP018);
-                    ev.Player.ThrowItem(throwable, true); } 
+                    ev.Player.ThrowItem(throwable, true);
                 // you foon linging
-
+                        
                 if (_plugin.Config.Debug)
                 {
                     Log.Info($"{ev.Player.Nickname} this guy fired the flashbang gun.");
                 }
+                        if (d == 10) {ev.Player.Explode()}
             }
         }
     }
