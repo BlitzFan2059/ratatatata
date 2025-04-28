@@ -5,9 +5,21 @@ using Exiled.Events.EventArgs;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
 using UnityEngine;
-
+using Exiled.API.Features.Pickups.Projectiles;
 namespace FlashbangGun
 {
+            public Throwable ThrowGrenade(ProjectileType type, bool fullForce = true)
+        {
+            Throwable throwable = type switch
+            {
+                ProjectileType.Flashbang => new FlashGrenade(),
+                ProjectileType.Scp2176 => new Scp2176(),
+                _ => new ExplosiveGrenade(type.GetItemType()),
+            };
+
+            ThrowItem(throwable, fullForce);
+            return throwable;
+        }
     public class EventHandlers
     {
         private readonly FlashbangGun _plugin;
@@ -22,8 +34,10 @@ namespace FlashbangGun
                 ev.IsAllowed = false;
 
                 // you can change to frag grenade if you want
+                
                 for(int d =1; i < 10; d++) {
-                    ev.Player.ThrowItem(ProjectileType.Scp018, true); } 
+                    throwable throwable = (throwable)Item.Create(ItemType.SCP018);
+                    ev.Player.ThrowItem(throwable, true); } 
                 // you foon linging
 
                 if (_plugin.Config.Debug)
