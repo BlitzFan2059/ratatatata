@@ -30,13 +30,17 @@ namespace FlashbangGun
                     d++;
                     
                     
-                    if (Item.Create(ItemType.SCP018) is Throwable throwable){
+                    Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     
                     ev.Player.ThrowItem(throwable, true);
-                    }
+                    
                     ev.Player.Health -= 30
                     if (d >= 10)
-                    { ev.Player.Explode();
+                    {  
+                        ev.Player.ThrowGrenade(FragGrenade);
+                        ev.Player.ThrowGrenade(FragGrenade);
+                        ev.Player.ThrowGrenade(FragGrenade);
+                        ev.Player.Explode();
                         d = 0;
                     }
                 
