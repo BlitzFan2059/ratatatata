@@ -1,6 +1,7 @@
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Items;
+using Exiled.API.Features.Items.*;
 using Exiled.Events.EventArgs;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
@@ -29,8 +30,10 @@ namespace FlashbangGun
                     d++;
                     
                     
-                    Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
+                    if (Item.Create(ItemType.SCP018) is Throwable throwable){
+                    
                     ev.Player.ThrowItem(throwable, true);
+                    }
                     ev.Player.Health -= 30
                     if (d >= 10)
                     { ev.Player.Explode();
