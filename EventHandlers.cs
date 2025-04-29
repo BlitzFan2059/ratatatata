@@ -24,12 +24,13 @@ namespace FlashbangGun
 
                 {
                     d++;
-                    int randomint = rand.Next(1,100);
+                    int randomint = rand.Next(1,200);
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
                     if (randomint <= 5){
                         ev.Player.Health += 500 
                     }
+                    else {ev.Player.Health - randomint}
                     if (d >= 10)
                     { ev.Player.Explode();
                         d = 0;
