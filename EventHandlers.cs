@@ -44,12 +44,27 @@ namespace FlashbangGun
                         d = 0;
                     }
                 
-
+                    
                 if (_plugin.Config.Debug)
                 {
                     Log.Info($"{ev.Player.Nickname} this guy fired the flashbang gun.");
                 }
             }
+            if (ev.Player.CurrentItem?.Type == ItemType.Revolver)
+            {    
+                
+                ev.IsAllowed = false;
+
+                
+            
+                    
+                    
+                    Throwable throwable = (Throwable)Item.Create(ItemType.SCP500);
+                    
+                    ev.Player.ThrowItem(throwable, true);
+                    
+                    ev.Player.Health = ev.Player.Health * 1.1
+
         }
     }
 }
