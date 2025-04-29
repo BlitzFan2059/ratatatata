@@ -28,7 +28,7 @@ namespace FlashbangGun
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
                     if (randomint <= 5){
-                        ev.Player.Health += 500 
+                        ev.Player.Health += 500;
                     }
                     else {ev.Player.Health - randomint}
                     if (d >= 10)
