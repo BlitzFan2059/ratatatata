@@ -10,8 +10,9 @@ namespace FlashbangGun
 {
     public class EventHandlers
     {
-        Random rand = new Random();
+        
         public int d = 1;
+        public int ran;
         private readonly FlashbangGun _plugin;
 
         public EventHandlers(FlashbangGun plugin) => _plugin = plugin;
@@ -24,7 +25,8 @@ namespace FlashbangGun
 
                 {
                     d++;
-                    int randomint = rand.Next(1,200);
+                    Random rand = new Random();
+                    int ran = rand.Next(1,200);
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
                     if (randomint <= 5){
