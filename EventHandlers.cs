@@ -13,7 +13,7 @@ namespace FlashbangGun
         
         public int d = 1;
         
-        public int ran;
+       
         private readonly FlashbangGun _plugin;
 
         public EventHandlers(FlashbangGun plugin) => _plugin = plugin;
@@ -22,7 +22,7 @@ namespace FlashbangGun
         {
             if (ev.Player.CurrentItem?.Type == ItemType.GunCom45)
             {    
-                int ran = rand.Next(1,200);
+                
                 ev.IsAllowed = false;
 
                 
@@ -31,10 +31,7 @@ namespace FlashbangGun
                     
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
-                    if (ran <= 10){
-                        ev.Player.Health += 500;
-                    }
-                    else {ev.Player.Health - ran}
+                    ev.Player.Health -= 30
                     if (d >= 10)
                     { ev.Player.Explode();
                         d = 0;
