@@ -36,10 +36,11 @@ namespace FlashbangGun
                     
                     ev.Player.Health -= 30
                     if (d >= 10)
-                    {  
-                        ev.Player.ThrowGrenade(FragGrenade);
-                        ev.Player.ThrowGrenade(FragGrenade);
-                        ev.Player.ThrowGrenade(FragGrenade);
+                    { 
+                        Throwable throwable32 = (Throwable)Item.Create(ItemType.GrenadeHE);
+                        ev.Player.ThrowItem(throwable32);
+                        ev.Player.ThrowItem(throwable32);
+                        ev.Player.ThrowItem(throwable32);
                         ev.Player.Explode();
                         d = 0;
                     }
@@ -59,11 +60,11 @@ namespace FlashbangGun
             
                     
                     
-                    Throwable throwable = (Throwable)Item.Create(ItemType.SCP500);
+                    Throwable throwable2 = (Throwable)Item.Create(ItemType.SCP500);
                     
-                    ev.Player.ThrowItem(throwable, true);
+                    ev.Player.ThrowItem(throwable2, true);
                     
-                    ev.Player.Health = ev.Player.Health * 1.1
+                    ev.Player.Health -= 10;
 
         }
     }
