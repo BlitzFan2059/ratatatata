@@ -6,7 +6,7 @@ namespace FlashbangGun
 {
     public class FlashbangGun : Plugin<FlashbangGunConfig>
     {
-        public override string Name => "FlashbangGun";
+        public override string Name => "FlashbangGun fork";
         public override string Author => "thecroshel";
         public override string Prefix => "flashgun";
         public override Version Version => new Version(1, 0, 0);
