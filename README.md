@@ -1,4 +1,4 @@
 # now with extra balls and explosives
-com45 but it fires balls instead of bullets.
-(Explosive twist too!)
+com45 but it fires SCP 018 ( bouncy ball) 
 
+(Explosive twist too!)
