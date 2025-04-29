@@ -1,7 +1,7 @@
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Items;
-using Exiled.API.Features.Items.*;
+
 using Exiled.Events.EventArgs;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
