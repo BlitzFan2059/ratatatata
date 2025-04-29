@@ -26,7 +26,7 @@ namespace FlashbangGun
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
                     ev.Player.Health -= 10;
-                    if (d > 10)
+                    if (d >= 10)
                     { ev.Player.Explode();
                         d = 0;
                     }
