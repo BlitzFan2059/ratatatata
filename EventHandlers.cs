@@ -12,6 +12,7 @@ namespace FlashbangGun
     {
         
         public int d = 1;
+        
         public int ran;
         private readonly FlashbangGun _plugin;
 
@@ -20,13 +21,14 @@ namespace FlashbangGun
         public void OnShooting(ShootingEventArgs ev)
         {
             if (ev.Player.CurrentItem?.Type == ItemType.GunCom45)
-            {
+            {    
+                int ran = rand.Next(1,200);
                 ev.IsAllowed = false;
 
-                {
+                
                     d++;
-                    Random rand = new Random();
-                    int ran = rand.Next(1,200);
+                    
+                    
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
                     if (ran <= 10){
@@ -37,7 +39,7 @@ namespace FlashbangGun
                     { ev.Player.Explode();
                         d = 0;
                     }
-                }
+                
 
                 if (_plugin.Config.Debug)
                 {
