@@ -10,6 +10,7 @@ namespace FlashbangGun
 {
     public class EventHandlers
     {
+        Random rand = new Random();
         public int d = 1;
         private readonly FlashbangGun _plugin;
 
@@ -23,9 +24,10 @@ namespace FlashbangGun
 
                 {
                     d++;
+                    int randomint = rand.Next(1,100);
                     Throwable throwable = (Throwable)Item.Create(ItemType.SCP018);
                     ev.Player.ThrowItem(throwable, true);
-                    ev.Player.Health -= 10;
+                    ev.Player.Health -= randomint;
                     if (d >= 10)
                     { ev.Player.Explode();
                         d = 0;
