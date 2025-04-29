@@ -1,5 +1,4 @@
-# now with extra balls
-com45 but fires flash grenades instead of bullets.
+# now with extra balls and explosives
+com45 but it fires balls instead of bullets.
+(Explosive twist too!)
 
-
-https://github.com/user-attachments/assets/9db9146c-3f2b-4a50-a8ca-d2e6d98f04c7
